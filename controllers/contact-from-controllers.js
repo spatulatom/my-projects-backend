@@ -13,7 +13,7 @@ const createContactForm = async(req,res,next)=>{
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return next(
-        new HttpError('Invalid inputs passed, please check your data.', 422)
+        new HttpError('Invalid inputs passed, please check your data!', 422)
       );
     }
     const { name, email, subject, text } = req.body;
@@ -69,7 +69,7 @@ const createContactForm = async(req,res,next)=>{
           to: email,
           from: 'spatulatom@gmail.com',
           subject: 'Thank you for contacting me through a Contact Form on my website',
-          html: '<h2>Appreciate you taking your time and sending me an email through a Contact Form on my website. I will reply to you shortly. <br> Kind regards,<br> Tomasz </h2>'
+          html: '<h2>Appreciate you taking your time and sending me an email through a Contact Form on my website. I will reply to you shortly. <br> Kind regards,<br> Tomasz S.</h2>'
         });
       }catch(err){
         const error = new HttpError(
